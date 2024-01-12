@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char cuvant[200], i, vocale[6] = "aeou";
+    bool ok = true;
+    bool cons = false;
+    
+    cin >> cuvant;
+    
+    for(i = 0; i < strlen(cuvant); i ++)
+    {
+    
+    if(strchr(vocale, cuvant[i]) != 0)
+    {
+        cout << "NU";
+        ok = false;
+        break;
+    }
+    else if(cuvant[i] != 'i')
+    {
+        cons = true;
+    }
+    
+    }
+    
+    if(ok == true and cons == true)
+    {
+        cout << "DA";
+    }
+    else if(cons == false)
+    {
+        cout << "NU";
+    }
+    
+    return 0;
+}
